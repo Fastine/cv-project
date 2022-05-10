@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Education extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            'year': '',
-            'level': '',
-            'major': '',
-            'institution': '',
-            'location': ''
+            year: "",
+            level: "",
+            major: "",
+            institution: "",
+            location: ""
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -27,13 +27,13 @@ class Education extends Component {
         return (
             <div>
                 <form>
-                    <label>
+                    <label htmlFor="year">
                         Year Completed:
-                        <input type='text' value={this.state.year} id='year' onChange={this.handleChange} placeholder="YYYY" pattern='[1-2][0-9]{3}' />
+                        <input type="text" value={this.state.year} id="year" name="year" onChange={this.handleChange} placeholder="YYYY" pattern="[1-2][0-9]{3}" />
                     </label>
-                    <label>
+                    <label htmlFor="level">
                         Level Completed:
-                        <select>
+                        <select value={this.state.level} id="level" name="level" onChange={this.handleChange}>
                             <option value="Associate">Associate</option>
                             <option value="Bachelor's">Bachelor's</option>
                             <option value="Graduate">Graduate</option>
@@ -41,17 +41,17 @@ class Education extends Component {
                             <option value="Doctoral">Doctoral</option>
                         </select>
                     </label>
-                    <label>
+                    <label htmlFor="major">
                         Major:
-                        <input type='text' value={this.state.major} id='major' onChange={this.handleChange} />
+                        <input type="text" value={this.state.major} id="major" name="major" onChange={this.handleChange} />
                     </label>
-                    <label>
+                    <label htmlFor="institution">
                         Institution:
-                        <input type='text' value={this.state.institution} id='institution' onChange={this.handleChange} />
+                        <input type="text" value={this.state.institution} id="institution" name="institution" onChange={this.handleChange} />
                     </label>
-                    <label>
+                    <label htmlFor="location">
                         Location:
-                        <input type='text' value={this.state.location} id='location' onChange={this.handleChange} />
+                        <input type="text" value={this.state.location} id="location" name="location" onChange={this.handleChange} />
                     </label>
                 </form>
             </div>
