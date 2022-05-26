@@ -25,34 +25,21 @@ class Education extends Component {
 
     render() {
         return (
-            <div>
+            <div className="section">
+            <h2>Education</h2>
                 <form>
-                    <label htmlFor="year">
-                        Year Completed:
-                        <input type="text" value={this.state.year} id="year" name="year" onChange={this.handleChange} placeholder="YYYY" pattern="[1-2][0-9]{3}" />
-                    </label>
-                    <label htmlFor="level">
-                        Level Completed:
+                        <input type="text" value={this.state.year} id="year" name="year" onChange={this.handleChange} placeholder="Year Graduated" />
                         <select value={this.state.level} id="level" name="level" onChange={this.handleChange}>
+                            <option value="" disabled selected>Degree: </option>
                             <option value="Associate">Associate</option>
                             <option value="Bachelor's">Bachelor's</option>
                             <option value="Graduate">Graduate</option>
                             <option value="Master's">Master's</option>
                             <option value="Doctoral">Doctoral</option>
                         </select>
-                    </label>
-                    <label htmlFor="major">
-                        Major:
-                        <input type="text" value={this.state.major} id="major" name="major" onChange={this.handleChange} />
-                    </label>
-                    <label htmlFor="institution">
-                        Institution:
-                        <input type="text" value={this.state.institution} id="institution" name="institution" onChange={this.handleChange} />
-                    </label>
-                    <label htmlFor="location">
-                        Location:
-                        <input type="text" value={this.state.location} id="location" name="location" onChange={this.handleChange} />
-                    </label>
+                        <input type="text" value={this.state.major} placeholder="Major" id="major" name="major" onChange={this.handleChange} />
+                        <input type="text" value={this.state.institution} placeholder="Institution" id="institution" name="institution" onChange={this.handleChange} />
+                        <input type="text" value={this.state.location} placeholder="City, State" id="location" name="location" onChange={this.handleChange} />
                 </form>
             </div>
         )

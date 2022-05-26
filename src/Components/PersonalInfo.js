@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import "../Styles/forms.css"
 
 class PersonalInfo extends Component {
     constructor(props) {
@@ -26,35 +27,16 @@ class PersonalInfo extends Component {
 
     render() {
         return (
-            <div>
+            <div className="section">
+                <h2>Personal Information</h2>
                 <form>
-                    <label htmlFor="firstName">
-                        First Name:
-                        <input type="text" value={this.state.firstName} id="firstName" name="firstName" onChange={this.handleChange} />
-                    </label>
-                    <label htmlFor="lastName">
-                        Last Name:
-                        <input type="text" value={this.state.lastName} id="lastName" name="lastName" onChange={this.handleChange} />
-                    </label>
-                    <label htmlFor="address">
-                        Address:
-                        <input type="text" value={this.state.address} id="address" name="address" onChange={this.handleChange} placeholder ="City, State"/>
-                    </label>
-                    <label htmlFor="phoneNumber">
-                        Phone Number:
-                        <input type="tel" value={this.state.phoneNumber} id="phoneNumber" name="phoneNumber" onChange={this.handleChange}
-                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" placeholder="555-555-5555"/>
-                    </label>
-                    <label htmlFor="email">
-                        E-mail:
-                        <input type="email" value={this.state.email} id="email" name="email" onChange={this.handleChange} />
-                    </label>
-                    <label htmlFor="website">
-                        URL:
-                        <input type="url" value={this.state.website} id="website" name="website" onChange={this.handleChange}
-                            placeholder="Github, LinkedIN, Portfolio"
-                        />
-                    </label>
+                        <input type="text" value={this.state.firstName} placeholder="First Name" id="firstName" name="firstName" onChange={this.handleChange} />
+                        <input type="text" value={this.state.lastName} placeholder="Last Name" id="lastName" name="lastName" onChange={this.handleChange} />
+                        <input type="text" value={this.state.address}  placeholder ="City, State" id="address" name="address" onChange={this.handleChange}/>
+                        <input type="tel" value={this.state.phoneNumber} placeholder="555-555-5555" id="phoneNumber" name="phoneNumber" onChange={this.handleChange}
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" />
+                        <input type="email" value={this.state.email} placeholder="Email" id="email" name="email" onChange={this.handleChange} />
+                        <input type="url" value={this.state.website} placeholder="URL" id="website" name="website" onChange={this.handleChange} />
                 </form>
             </div>
         )

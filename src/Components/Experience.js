@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../Styles/forms.css"
 
 class Experience extends Component {
     constructor(props) {
@@ -25,23 +26,14 @@ class Experience extends Component {
 
     render() {
         return (
-            <div>
+            <div className="section">
+                <h2>Experience</h2>
                 <form>
-                    <label htmlFor="startDate">
-                        <input type="date" id="startDate" name="startDate" value={this.state.startDate} placeholder="YYYY-MM" />
-                    </label>
-                    <label htmlFor="endDate">
-                        <input type="date" id="endDate" name="endDate" value={this.state.endDate} placeholder="YYYY-MM" />
-                    </label>
-                    <label htmlFor="jobTitle">
-                        <input type="text" id="jobTitle" name="jobTitle" value={this.state.jobTitle} />
-                    </label>
-                    <label htmlFor="location">
-                        <input type="text" id="location" name="location" value={this.state.location} placeholder="e.g. Chicago, IL" />
-                    </label>
-                    <label htmlFor="jobDuties">
-                        <textarea id="jobDuties" name="jobDuties" value={this.state.jobDuties} placeholder="Responsibilities & Achievements" rows="5" cols="40" />
-                    </label>
+                    <input type="date" id="startDate" name="startDate" value={this.state.startDate} />
+                    <input type="date" id="endDate" name="endDate" value={this.state.endDate} />
+                    <input type="text" placeholder="Job Title" id="jobTitle" name="jobTitle" value={this.state.jobTitle} />
+                    <input type="text" placeholder="Location e.g. Chicago, IL" id="location" name="location" value={this.state.location} />
+                    <input type="text" id="jobDuties" name="jobDuties" value={this.state.jobDuties} placeholder="Responsibilities & Achievements" />
                 </form>
             </div>
         )

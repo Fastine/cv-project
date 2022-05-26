@@ -1,0 +1,22 @@
+.section {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: block;
+}
+
+input, select {
+    display: block;
+    width: 100%;
+    border: solid thin grey;
+    margin: .3rem;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+h2 {
+    margin-bottom: 0.25rem;
+}
