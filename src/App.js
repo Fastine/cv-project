@@ -1,8 +1,8 @@
-import PersonalInfo from "./Components/PersonalInfo";
-import Education from "./Components/Education";
-import Experience from "./Components/Experience";
+
 import Header from "./Components/Header";
+import Main from "./Components/Main";
 import "./Styles/app.css";
+import "./Styles/index.css";
 
 
 function App() {
@@ -10,11 +10,8 @@ function App() {
     <div className="app">
 
     <Header />
-    <div className="main">
-      <PersonalInfo />
-      <Education />
-      <Experience />
-    </div>
+    <Main />
+
     </div>
   );
 }

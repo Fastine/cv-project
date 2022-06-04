@@ -12,11 +12,14 @@ input, select {
     display: block;
     width: 100%;
     border: solid thin grey;
+    background-color: rgb(63, 62, 62);
     margin: .3rem;
     font-size: 1.2rem;
+    color: whitesmoke;
     outline: none;
 }
 
 h2 {
     margin-bottom: 0.25rem;
+    color: whitesmoke;
 }

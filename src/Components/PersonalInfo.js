@@ -5,12 +5,15 @@ class PersonalInfo extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            firstName: "",
-            lastName: "",
-            address: "",
-            phoneNumber: "",
-            email: "",
-            website: "",
+            data: {
+                firstName: "",
+                lastName: "",
+                address: "",
+                phoneNumber: "",
+                email: "",
+                website: "",
+            },
+            isEditable: false
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -18,7 +21,11 @@ class PersonalInfo extends Component {
     }
 
     handleChange (e) {
-        this.setState({[e.target.id]: e.target.value});
+        this.setState({
+            data: {
+                [e.target.id]: e.target.value
+            }
+        });
     }
 
     handleSubmit () {
@@ -26,17 +33,19 @@ class PersonalInfo extends Component {
     }
 
     render() {
+        const { data } = this.state;
+
         return (
             <div className="section">
                 <h2>Personal Information</h2>
                 <form>
-                        <input type="text" value={this.state.firstName} placeholder="First Name" id="firstName" name="firstName" onChange={this.handleChange} />
-                        <input type="text" value={this.state.lastName} placeholder="Last Name" id="lastName" name="lastName" onChange={this.handleChange} />
-                        <input type="text" value={this.state.address}  placeholder ="City, State" id="address" name="address" onChange={this.handleChange}/>
-                        <input type="tel" value={this.state.phoneNumber} placeholder="555-555-5555" id="phoneNumber" name="phoneNumber" onChange={this.handleChange}
+                        <input type="text" value={data.firstName} placeholder="First Name" id="firstName" name="firstName" onChange={this.handleChange} />
+                        <input type="text" value={data.lastName} placeholder="Last Name" id="lastName" name="lastName" onChange={this.handleChange} />
+                        <input type="text" value={data.address}  placeholder ="City, State" id="address" name="address" onChange={this.handleChange}/>
+                        <input type="tel" value={data.phoneNumber} placeholder="555-555-5555" id="phoneNumber" name="phoneNumber" onChange={this.handleChange}
                         pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" />
-                        <input type="email" value={this.state.email} placeholder="Email" id="email" name="email" onChange={this.handleChange} />
-                        <input type="url" value={this.state.website} placeholder="URL" id="website" name="website" onChange={this.handleChange} />
+                        <input type="email" value={data.email} placeholder="Email" id="email" name="email" onChange={this.handleChange} />
+                        <input type="url" value={data.website} placeholder="URL" id="website" name="website" onChange={this.handleChange} />
                 </form>
             </div>
         )
