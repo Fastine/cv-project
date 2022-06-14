@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPenToSquare, faFloppyDisk } from "@fortawesome/free-solid-svg-icons"
 
 class Education extends Component {
     constructor (props) {
@@ -19,15 +21,14 @@ class Education extends Component {
         this.setState({[e.target.id]: e.target.value});
     }
 
-    handleSubmit() {
-
+    handleSubmit(e) {
+        e.preventDefault();
     }
 
     render() {
         return (
             <div className="section">
-            <h2>Education</h2>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                         <input type="text" value={this.state.year} id="year" name="year" onChange={this.handleChange} placeholder="Year Graduated" />
                         <select value={this.state.level} id="level" name="level" onChange={this.handleChange}>
                             <option value="" disabled selected>Degree: </option>
@@ -40,6 +41,7 @@ class Education extends Component {
                         <input type="text" value={this.state.major} placeholder="Major" id="major" name="major" onChange={this.handleChange} />
                         <input type="text" value={this.state.institution} placeholder="Institution" id="institution" name="institution" onChange={this.handleChange} />
                         <input type="text" value={this.state.location} placeholder="City, State" id="location" name="location" onChange={this.handleChange} />
+                        <button onSubmit={this.handleSubmit} ><FontAwesomeIcon icon={faFloppyDisk} size="xl" /></button>
                 </form>
             </div>
         )

@@ -9,9 +9,11 @@ class Main extends React.Component {
     render() {
         return (
             <div className="main">
-
+            <h2>Personal Information</h2>
             <PersonalInfo />
+            <h2>Education</h2>
             <Education />
+            <h2>Experience</h2>
             <Experience />
             </div>
         )
