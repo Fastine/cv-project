@@ -8,13 +8,13 @@ class PersonalInfo extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            firstName: "",
-            lastName: "",
-            address: "",
-            phoneNumber: "",
-            email: "",
-            website: "",
-            isEditable: true
+            firstName: "John",
+            lastName: "Beaderstadt",
+            address: "Ankeny, IA",
+            phoneNumber: "555-555-5555",
+            email: "me@gmail.com",
+            website: "www.google.com",
+            isEditable: false
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -43,7 +43,7 @@ class PersonalInfo extends Component {
 
         if (isEditable === true) {
             return (
-                <div className="section">
+                <div className="editForm">
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" value={firstName} placeholder="First Name" id="firstName" name="firstName" onChange={this.handleChange} />
                     <input type="text" value={lastName} placeholder="Last Name" id="lastName" name="lastName" onChange={this.handleChange} />
@@ -58,7 +58,7 @@ class PersonalInfo extends Component {
     }
     else {
     return (
-        <div>
+        <div className="displayForm">
             <h3>{firstName} {lastName}</h3>
             <p>{address}</p>
             <p>{phoneNumber}</p>

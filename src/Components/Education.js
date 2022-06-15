@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../Styles/forms.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPenToSquare, faFloppyDisk } from "@fortawesome/free-solid-svg-icons"
 
@@ -6,12 +7,12 @@ class Education extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            year: "",
-            level: "",
-            major: "",
-            institution: "",
-            location: "",
-            isEditable: true
+            year: "2006",
+            level: "Bachelor's",
+            major: "Microbiology",
+            institution: "Iowa State University",
+            location: "Ames, IA",
+            isEditable: false
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -38,7 +39,7 @@ class Education extends Component {
         if (isEditable === true) {
 
             return (
-                <div className="section">
+                <div className="editForm">
                 <form onSubmit={this.handleSubmit}>
                         <input type="text" value={year} id="year" name="year" onChange={this.handleChange} placeholder="Year Graduated" />
                         <select value={level} id="level" name="level" onChange={this.handleChange}>
@@ -58,8 +59,8 @@ class Education extends Component {
         )
     } else {
         return (
-            <div>
-                <h2>{institution}</h2>
+            <div className="displayForm">
+                <h3>{institution}</h3>
                 <p>{location}  --  {year}</p>
                 <p>{level} of {major}</p>
                 <button onClick={this.handleEdit}><FontAwesomeIcon icon={faPenToSquare} size="2x" /></button> 

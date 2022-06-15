@@ -1,7 +1,14 @@
-.section {
-    width: 35%;
+.editForm {
+    width: 50%;
     display: flex;
     flex-direction: column;
+}
+
+.displayForm {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 label {
@@ -21,7 +28,12 @@ input, select {
 
 h2 {
     margin-bottom: 0.25rem;
-    color: whitesmoke;
+    color: #3E2C41;
+}
+
+h3 {
+    margin-bottom: 0.25rem;
+    color: #6E85B2
 }
 
 button {
@@ -29,4 +41,11 @@ button {
     border: none;
     outline: none;
     cursor: pointer;
+    display: block;
+}
+
+p {
+    line-height: .1rem;
+    font-size: 1.1rem;
+    color: #5C527F;
 }

@@ -7,13 +7,13 @@ class Experience extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            company: "",
-            startDate: "",
-            endDate: "",
-            jobTitle: "",
-            location: "",
-            jobDuties: "",
-            isEditable: true
+            company: "Starbucks",
+            startDate: "05-01-1988",
+            endDate: "05-01-2000",
+            jobTitle: "Coffee Consumer",
+            location: "Ankeny, IA",
+            jobDuties: "Consume coffee.",
+            isEditable: false
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -41,7 +41,7 @@ class Experience extends Component {
 
             
             return (
-                <div className="section">
+                <div className="editForm">
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" placeholder="Company/Project" id="company" name="company" value={company} onChange={this.handleChange} />
                     <input type="date" id="startDate" name="startDate" value={startDate} onChange={this.handleChange}/>
@@ -55,7 +55,7 @@ class Experience extends Component {
         )
     } else {
         return (
-            <div>
+            <div className="displayForm">
                 <h3>{company}</h3>
                 <p>{startDate} - {endDate}</p>
                 <p>{location}</p>
