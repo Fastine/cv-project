@@ -7,12 +7,12 @@ class Education extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            year: "2006",
-            level: "Bachelor's",
-            major: "Microbiology",
-            institution: "Iowa State University",
-            location: "Ames, IA",
-            isEditable: false
+            year: "",
+            level: "",
+            major: "",
+            institution: "",
+            location: "",
+            isEditable: true
         }
 
         this.handleChange = this.handleChange.bind(this);

@@ -8,13 +8,13 @@ class PersonalInfo extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            firstName: "John",
-            lastName: "Beaderstadt",
-            address: "Ankeny, IA",
-            phoneNumber: "555-555-5555",
-            email: "me@gmail.com",
-            website: "www.google.com",
-            isEditable: false
+            firstName: "",
+            lastName: "",
+            address: "",
+            phoneNumber: "",
+            email: "",
+            website: "",
+            isEditable: true
         }
 
         this.handleChange = this.handleChange.bind(this);

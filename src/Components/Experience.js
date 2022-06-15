@@ -7,13 +7,13 @@ class Experience extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            company: "Starbucks",
-            startDate: "05-01-1988",
-            endDate: "05-01-2000",
-            jobTitle: "Coffee Consumer",
-            location: "Ankeny, IA",
-            jobDuties: "Consume coffee.",
-            isEditable: false
+            company: "",
+            startDate: "",
+            endDate: "",
+            jobTitle: "",
+            location: "",
+            jobDuties: "",
+            isEditable: true
         }
 
         this.handleChange = this.handleChange.bind(this);
