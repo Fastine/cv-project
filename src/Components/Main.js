@@ -3,10 +3,9 @@ import PersonalInfo from "./PersonalInfo";
 import Education from "./Education";
 import Experience from "./Experience";
 
-class Main extends React.Component {
+const Main = () => {
 
 
-    render() {
         return (
             <div className="main">
             <h2>Personal Information</h2>
@@ -17,7 +16,6 @@ class Main extends React.Component {
             <Experience />
             </div>
         )
-    }
 }
 
 export default Main;

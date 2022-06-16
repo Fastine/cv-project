@@ -1,55 +1,47 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "../Styles/forms.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPenToSquare, faFloppyDisk } from "@fortawesome/free-solid-svg-icons"
 
-class Experience extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            company: "",
-            startDate: "",
-            endDate: "",
-            jobTitle: "",
-            location: "",
-            jobDuties: "",
-            isEditable: true
-        }
+const Experience = () => {
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleEdit = this.handleEdit.bind(this);
-    }
+    // 
+    // State
+    // 
+    const [company, setCompany] = useState("");
+    const [startDate, setStartDate] = useState("");
+    const [endDate, setEndDate] = useState("");
+    const [jobTitle, setJobTitle] = useState("");
+    const [location, setLocation] = useState("");
+    const [jobDuties, setJobDuties] = useState("");
+    const [isEditable, setIsEditable] = useState(true);
 
-    handleChange(e) {
-        this.setState({[e.target.id]: e.target.value});
-    }
-
-    handleSubmit(e) {
+    // 
+    // Helpers
+    // 
+    const handleSubmit = (e) => {
         e.preventDefault();
-        this.setState({isEditable: false})
+        setIsEditable(false);
     }
 
-    handleEdit() {
-        this.setState({isEditable: true})
+    const handleEdit = () => {
+        setIsEditable(true);
     }
 
-    render() {
-        const { company, startDate, endDate, jobTitle, jobDuties, location, isEditable } = this.state;
-
-        if (isEditable === true) {
-
-            
-            return (
-                <div className="editForm">
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" placeholder="Company/Project" id="company" name="company" value={company} onChange={this.handleChange} />
-                    <input type="date" id="startDate" name="startDate" value={startDate} onChange={this.handleChange}/>
-                    <input type="date" id="endDate" name="endDate" value={endDate} onChange={this.handleChange}/>
-                    <input type="text" placeholder="Job Title" id="jobTitle" name="jobTitle" value={jobTitle} onChange={this.handleChange}/>
-                    <input type="text" placeholder="Location e.g. Chicago, IL" id="location" name="location" value={location} onChange={this.handleChange}/>
-                    <input type="text" id="jobDuties" name="jobDuties" value={jobDuties} placeholder="Responsibilities & Achievements" onChange={this.handleChange}/>
-                    <button onSubmit={this.handleSubmit} ><FontAwesomeIcon icon={faFloppyDisk} size="2x" /></button>
+    // 
+    // Render Logic
+    // 
+    if (isEditable === true) {
+        return (
+            <div className="editForm">
+                <form onSubmit={handleSubmit}>
+                    <input type="text" placeholder="Company/Project" id="company" name="company" value={company} onChange={e => setCompany(e.target.value)} />
+                    <input type="date" id="startDate" name="startDate" value={startDate} onChange={e => setStartDate(e.target.value)}/>
+                    <input type="date" id="endDate" name="endDate" value={endDate} onChange={e => setEndDate(e.target.value)}/>
+                    <input type="text" placeholder="Job Title" id="jobTitle" name="jobTitle" value={jobTitle} onChange={e => setJobTitle(e.target.value)}/>
+                    <input type="text" placeholder="Location e.g. Chicago, IL" id="location" name="location" value={location} onChange={e => setLocation(e.target.value)}/>
+                    <input type="text" id="jobDuties" name="jobDuties" value={jobDuties} placeholder="Responsibilities & Achievements" onChange={e => setJobDuties(e.target.value)}/>
+                    <button onSubmit={handleSubmit} ><FontAwesomeIcon icon={faFloppyDisk} size="2x" /></button>
                 </form>
             </div>
         )
@@ -61,11 +53,9 @@ class Experience extends Component {
                 <p>{location}</p>
                 <p>{jobTitle}</p>
                 <p>{jobDuties}</p>
-                <button onClick={this.handleEdit}><FontAwesomeIcon icon={faPenToSquare} size="2x"/></button> 
+                <button onClick={handleEdit}><FontAwesomeIcon icon={faPenToSquare} size="2x"/></button> 
             </div>
         )
-    }
-    
     }
 }
 
